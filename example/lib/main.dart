@@ -8,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -48,6 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: <Widget>[
+          const MarqueeText(
+            text: TextSpan(text: "test kl; zxZxzxzx asdasd asd asda "),
+            speed: 10,
+            textDirection: TextDirection.rtl,
+            marqueeDirection: MarqueeDirection.ltr,
+            alwaysScroll: true,
+          ),
           Row(
             children: <Widget>[
               /// FirstText
@@ -60,8 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     text: _textList[firstTextIndex],
                   ),
                   speed: 90,
-                  textDirection: TextDirection.rtl,
-                  marqueeDirection: MarqueeDirection.ltr,
+                  textDirection: TextDirection.ltr,
+                  marqueeDirection: MarqueeDirection.rtl,
                 ),
               ),
 
